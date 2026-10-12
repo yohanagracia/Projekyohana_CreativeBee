@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9E8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF9E8"
+            android:title="Profil Developer"
+            android:titleTextColor="#3E3025"
+            android:navigationIcon="@drawable/ic_arrow_back"
+            android:contentDescription="Kembali" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/developer_photo"
+            android:scaleType="centerCrop"
+            android:contentDescription="Foto developer" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="NAMA LENGKAP"
+            android:textColor="#3E3025"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Mahasiswa D4 Teknik Informatika"
+            android:textColor="#75675A"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:padding="16dp"
+            android:background="#FFFFFF"
+            android:text="Tentang Saya\ Saya seorang remaja berusia 20 tahun, saat ini sedang menempuh pendidikna di Politeknik Caltex Riau dengan prodi D4 Teknik Informatika"
+            android:textColor="#3E3025"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:padding="16dp"
+            android:background="#FFFFFF"
+            android:text="Media Sosial\n\nInstagram: yohana.graciaa.instagram\nLinkedIn: Yohana Gracia.linkedin\nGitHub: yohanagracia.github"
+            android:textColor="#3E3025"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:padding="16dp"
+            android:background="#FFFFFF"
+            android:text="Hobi\ Menari\bernyanyi\bermain musik\menggambar"
+            android:textColor="#3E3025"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:padding="16dp"
+            android:background="#FFFFFF"
+            android:text="Kekuatan Terbesar adalah tekun, kreatif, atau mampu bekerja sama."
+            android:textColor="#3E3025"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+</ScrollView>

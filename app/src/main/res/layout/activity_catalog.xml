@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bee_cream">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarCatalog"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bee_yellow"
+        android:title="Katalog Produk"
+        android:titleTextColor="@color/bee_brown" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Judul -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Produk Creative Bee"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="@color/bee_brown"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Temukan berbagai produk clay lucu untuk menemani kreativitasmu."
+                android:textSize="14sp"
+                android:textColor="@color/bee_brown"
+                android:layout_marginBottom="18dp" />
+
+            <!-- KATEGORI -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Produk Populer"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:textColor="@color/bee_brown"
+                android:layout_marginBottom="10dp" />
+
+            <!-- BARIS PRODUK 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- PRODUK 1 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:padding="8dp"
+                    android:layout_marginEnd="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BEST SELLER"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/bee_brown"
+                        android:background="@color/bee_yellow"
+                        android:padding="5dp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="145dp"
+                        android:src="@drawable/clay_honey_bear"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="Clay Honey Bear"
+                        android:layout_marginTop="6dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Clay Honey Bear"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/bee_brown"
+                        android:layout_marginTop="7dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="⭐ 4.9 (128)"
+                        android:textSize="12sp"
+                        android:textColor="@color/bee_brown"
+                        android:layout_marginTop="4dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Rp35.000"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/bee_orange"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="6dp" />
+
+                </LinearLayout>
+
+                <!-- PRODUK 2 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:padding="8dp"
+                    android:layout_marginStart="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NEW"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/bee_brown"
+                        android:background="@color/bee_yellow"
+                        android:padding="5dp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="145dp"
+                        android:src="@drawable/clay_froggie_pot"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="Clay Froggie Pot"
+                        android:layout_marginTop="6dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Clay Froggie Pot"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/bee_brown"
+                        android:layout_marginTop="7dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="⭐ 4.8 (96)"
+                        android:textSize="12sp"
+                        android:textColor="@color/bee_brown"
+                        android:layout_marginTop="4dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Rp38.000"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/bee_orange"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="6dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- JARAK -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp" />
+
+            <!-- BARIS PRODUK 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!-- PRODUK 3 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:padding="8dp"
+                    android:layout_marginEnd="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BEST SELLER"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/bee_brown"
+                        android:background="@color/bee_yellow"
+                        android:padding="5dp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="145dp"
+                        android:src="@drawable/white_rabbit_clay"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="White Rabbit Clay"
+                        android:layout_marginTop="6dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="White Rabbit Clay"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/bee_brown"
+                        android:layout_marginTop="7dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="⭐ 4.7 (82)"
+                        android:textSize="12sp"
+                        android:textColor="@color/bee_brown"
+                        android:layout_marginTop="4dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Rp32.000"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/bee_orange"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="6dp" />
+
+                </LinearLayout>
+
+                <!-- PRODUK 4 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:padding="8dp"
+                    android:layout_marginStart="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NEW"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/bee_brown"
+                        android:background="@color/bee_yellow"
+                        android:padding="5dp" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="145dp"
+                        android:src="@drawable/mini_croissant_clay"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="Mini Croissant Clay"
+                        android:layout_marginTop="6dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mini Croissant Clay"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/bee_brown"
+                        android:layout_marginTop="7dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="⭐ 4.9 (110)"
+                        android:textSize="12sp"
+                        android:textColor="@color/bee_brown"
+                        android:layout_marginTop="4dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Rp28.000"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/bee_orange"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="6dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Website -->
+            <Button
+                android:id="@+id/btnWebsite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lihat Website Creative Bee"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/bee_orange"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

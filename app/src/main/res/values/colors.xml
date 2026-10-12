@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Warna utama Creative Bee -->
+    <color name="bee_yellow">#F6C945</color>
+
+    <!-- Warna teks -->
+    <color name="bee_brown">#4A321F</color>
+
+    <!-- Background -->
+    <color name="bee_cream">#FFF8E7</color>
+
+    <!-- Warna aksen -->
+    <color name="bee_orange">#E89B2C</color>
+
+    <!-- Putih -->
+    <color name="white">#FFFFFF</color>
+
+</resources>

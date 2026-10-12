@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bee_cream">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarWorkshop"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bee_yellow"
+        android:title="Workshop Clay"
+        android:titleTextColor="@color/bee_brown" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Judul -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Workshop Clay"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/bee_brown"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create something special with Creative Bee!"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/bee_orange"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Deskripsi -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp"
+                android:background="@color/white"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tentang Workshop"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/bee_brown"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ikuti pengalaman membuat kerajinan clay yang menyenangkan bersama Creative Bee. Cocok untuk pemula maupun kamu yang ingin mengembangkan kreativitas."
+                    android:textSize="14sp"
+                    android:textColor="@color/bee_brown"
+                    android:lineSpacingExtra="4dp" />
+
+            </LinearLayout>
+
+            <!-- Informasi Workshop -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Informasi Workshop"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/bee_brown"
+                android:layout_marginBottom="10dp" />
+
+            <!-- Lokasi -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@color/white"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Lokasi"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/bee_brown"
+                    android:layout_marginBottom="5dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Creative Bee Workshop, Pekanbaru"
+                    android:textSize="14sp"
+                    android:textColor="@color/bee_brown" />
+
+            </LinearLayout>
+
+            <!-- Jadwal -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@color/white"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🕐 Jadwal"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/bee_brown"
+                    android:layout_marginBottom="5dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sabtu &amp; Minggu • 10.00 - 16.00 WIB"
+                    android:textSize="14sp"
+                    android:textColor="@color/bee_brown" />
+
+            </LinearLayout>
+
+            <!-- Harga -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@color/white"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="💰 Harga"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/bee_brown"
+                    android:layout_marginBottom="5dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mulai dari Rp150.000 / orang"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/bee_orange" />
+
+            </LinearLayout>
+
+            <!-- Tombol Pesan -->
+            <Button
+                android:id="@+id/btnBookWorkshop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pesan Workshop"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/bee_brown"
+                android:backgroundTint="@color/bee_yellow"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Tombol Website -->
+            <Button
+                android:id="@+id/btnWorkshopWebsite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lihat Website Creative Bee"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/bee_orange"
+                android:padding="12dp"
+                android:layout_marginBottom="20dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
