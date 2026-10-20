@@ -2,25 +2,28 @@ package com.example.projekmobileyohana
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import com.example.projekmobileyohana.databinding.ActivityCatalogBinding
 
 class CatalogActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityCatalogBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_catalog)
+
+        binding = ActivityCatalogBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Toolbar
-        val toolbar = findViewById<Toolbar>(R.id.toolbarCatalog)
+        val toolbar = binding.toolbarCatalog
         setSupportActionBar(toolbar)
 
         // Tombol Back
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // Tombol Website
-        val btnWebsite = findViewById<Button>(R.id.btnWebsite)
+        val btnWebsite = binding.btnWebsite
 
         btnWebsite.setOnClickListener {
             val intent = Intent(this, WebsiteActivity::class.java)
