@@ -18,21 +18,28 @@ class AuthActivity : AppCompatActivity() {
 
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
-        val etUsername = binding.etUsername
-        val etPassword = binding.etPassword
-        val btnLogin = binding.btnLogin
+        // Tombol login
+        binding.btnLogin.setOnClickListener {
+            val username = binding.etUsername.text.toString().trim()
+            val password = binding.etPassword.text.toString()
 
-        btnLogin.setOnClickListener {
-            val username = etUsername.text.toString().trim()
-            val password = etPassword.text.toString()
+            val savedUsername = sharedPref.getString("username", null)
+            val savedPassword = sharedPref.getString("password", null)
+            val isRegistered = sharedPref.getBoolean("isRegistered", false)
 
-            if (username.isNotEmpty() &&
-                password.isNotEmpty() &&
-                username == password
-            ) {
+            val validPracticumLogin =
+                username.isNotEmpty() &&
+                        password.isNotEmpty() &&
+                        username == password
+
+            val validRegisteredLogin =
+                isRegistered &&
+                        username == savedUsername &&
+                        password == savedPassword
+
+            if (validPracticumLogin || validRegisteredLogin) {
                 sharedPref.edit()
                     .putBoolean("isLogin", true)
-                    .putString("username", username)
                     .apply()
 
                 startActivity(Intent(this, MainActivity::class.java))
@@ -40,10 +47,15 @@ class AuthActivity : AppCompatActivity() {
             } else {
                 AlertDialog.Builder(this)
                     .setTitle("Login Gagal")
-                    .setMessage("Silakan coba lagi.")
+                    .setMessage("Username atau password salah. Silakan coba lagi.")
                     .setPositiveButton("OK", null)
                     .show()
             }
+        }
+
+        // Tombol daftar akun baru
+        binding.btnRegisterPage.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
 }

@@ -1,3 +1,4 @@
+
 package com.example.projekmobileyohana
 
 import android.content.Intent
@@ -7,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
@@ -28,11 +30,16 @@ private fun createBeePage(
         setPadding(24, 24, 24, 24)
         setBackgroundColor(0xFFFFF9E8.toInt())
 
-        addView(TextView(context).apply {
-            text = "🐝"
-            textSize = 60f
-            gravity = Gravity.CENTER
+        addView(ImageView(context).apply {
+            setImageResource(R.drawable.bee_logo)
+            layoutParams = LinearLayout.LayoutParams(
+                1000,
+                1000
+            )
+            scaleType = ImageView.ScaleType.FIT_CENTER
+            adjustViewBounds = true
         })
+
 
         addView(TextView(context).apply {
             text = title
@@ -53,7 +60,9 @@ private fun createBeePage(
         if (buttonText != null && onButtonClick != null) {
             addView(Button(context).apply {
                 text = buttonText
-                setOnClickListener { onButtonClick() }
+                setOnClickListener {
+                    onButtonClick()
+                }
             })
         }
 

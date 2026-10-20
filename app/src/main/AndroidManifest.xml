@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Izin akses internet untuk WebView -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -14,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjekMobileYohana">
 
-        <!-- Splash Screen sebagai halaman pertama -->
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
@@ -24,42 +22,45 @@
             </intent-filter>
         </activity>
 
-        <!-- Halaman utama -->
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Halaman login -->
         <activity
             android:name=".AuthActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Halaman katalog produk -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".VerificationActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".CatalogActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Halaman workshop clay -->
         <activity
             android:name=".WorkshopActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Halaman website -->
         <activity
             android:name=".WebsiteActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Halaman profil developer -->
         <activity
             android:name=".ProfileDeveloperActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
     </application>
-
 </manifest>

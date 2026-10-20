@@ -1,5 +1,6 @@
 package com.example.projekmobileyohana
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -8,19 +9,26 @@ import com.example.projekmobileyohana.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var bottomNavigation: com.google.android.material.bottomnavigation.BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Menggunakan View Binding untuk layout utama aplikasi
+        // Periksa status login
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+        val isLogin = sharedPref.getBoolean("isLogin", false)
+
+        if (!isLogin) {
+            startActivity(Intent(this, AuthActivity::class.java))
+            finish()
+            return
+        }
+
+        // Tampilkan halaman utama jika sudah login
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Menghubungkan Bottom Navigation menggunakan View Binding
-        bottomNavigation = binding.bottomNavigation
+        val bottomNavigation = binding.bottomNavigation
 
-        // Mengatur perpindahan halaman berdasarkan menu
         bottomNavigation.setOnItemSelectedListener { item ->
             val selectedFragment: Fragment? = when (item.itemId) {
                 R.id.menu_home -> HomeFragment()
@@ -38,13 +46,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Menampilkan Beranda saat aplikasi pertama dibuka
+        // Tampilkan Beranda saat pertama dibuka
         if (savedInstanceState == null) {
             bottomNavigation.selectedItemId = R.id.menu_home
         }
     }
 
-    // Menampilkan Fragment yang dipilih
     private fun loadFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)

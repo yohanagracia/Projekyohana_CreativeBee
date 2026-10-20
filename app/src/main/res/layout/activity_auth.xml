@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imgLogo"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:src="@drawable/bee_logo"
         android:contentDescription="Logo Creative Bee"
         android:scaleType="fitCenter" />
@@ -60,5 +60,22 @@
         android:text="Masuk"
         android:textColor="#3E3025"
         android:backgroundTint="#F6C445" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Belum punya akun?"
+        android:textColor="#75675A"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btnRegisterPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Daftar Akun Baru"
+        android:textColor="#3E3025"
+        android:backgroundTint="#E8A928" />
 
 </LinearLayout>
