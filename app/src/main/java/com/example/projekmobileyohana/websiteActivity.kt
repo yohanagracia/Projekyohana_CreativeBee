@@ -4,33 +4,35 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.webkit.WebChromeClient
 import android.webkit.WebSettings
-import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import com.example.projekmobileyohana.databinding.ActivityWebsiteBinding
 
 class WebsiteActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityWebsiteBinding
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_website)
+
+        binding = ActivityWebsiteBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Toolbar
-        val toolbar = findViewById<Toolbar>(R.id.toolbarWebsite)
+        val toolbar = binding.toolbarWebsite
         setSupportActionBar(toolbar)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // WebView
-        val webView = findViewById<WebView>(R.id.webView)
+        val webView = binding.webView
 
         webView.webViewClient = WebViewClient()
         webView.webChromeClient = WebChromeClient()
 
         val settings: WebSettings = webView.settings
-
         settings.javaScriptEnabled = true
         settings.domStorageEnabled = true
         settings.loadsImagesAutomatically = true
