@@ -3,25 +3,28 @@ package com.example.projekmobileyohana
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import com.example.projekmobileyohana.databinding.ActivityWorkshopBinding
 
 class WorkshopActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityWorkshopBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_workshop)
+
+        binding = ActivityWorkshopBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Toolbar
-        val toolbar = findViewById<Toolbar>(R.id.toolbarWorkshop)
+        val toolbar = binding.toolbarWorkshop
         setSupportActionBar(toolbar)
 
         // Tombol Back
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // Tombol Pesan Workshop
-        val btnBookWorkshop = findViewById<Button>(R.id.btnBookWorkshop)
+        val btnBookWorkshop = binding.btnBookWorkshop
 
         btnBookWorkshop.setOnClickListener {
             val url = "https://www.google.com/search?q=Creative+Bee+clay+workshop"
@@ -30,7 +33,7 @@ class WorkshopActivity : AppCompatActivity() {
         }
 
         // Tombol Lihat Website Creative Bee
-        val btnWorkshopWebsite = findViewById<Button>(R.id.btnWorkshopWebsite)
+        val btnWorkshopWebsite = binding.btnWorkshopWebsite
 
         btnWorkshopWebsite.setOnClickListener {
             val intent = Intent(this, WebsiteActivity::class.java)
