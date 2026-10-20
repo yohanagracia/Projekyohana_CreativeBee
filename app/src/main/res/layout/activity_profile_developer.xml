@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center"
-            android:text="NAMA LENGKAP"
+            android:text="Yohana Gracia"
             android:textColor="#3E3025"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -53,7 +53,7 @@
             android:layout_marginTop="24dp"
             android:padding="16dp"
             android:background="#FFFFFF"
-            android:text="Tentang Saya\ Saya seorang remaja berusia 20 tahun, saat ini sedang menempuh pendidikna di Politeknik Caltex Riau dengan prodi D4 Teknik Informatika"
+            android:text="Tentang Saya\n Saya seorang remaja berusia 20 tahun, saat ini sedang menempuh pendidikna di Politeknik Caltex Riau dengan prodi D4 Teknik Informatika"
             android:textColor="#3E3025"
             android:textSize="15sp" />
 
@@ -73,7 +73,7 @@
             android:layout_marginTop="12dp"
             android:padding="16dp"
             android:background="#FFFFFF"
-            android:text="Hobi\ Menari\bernyanyi\bermain musik\menggambar"
+            android:text="Hobi\n\n Menari\n bernyanyi\n bermain musik\n menggambar"
             android:textColor="#3E3025"
             android:textSize="15sp" />
 
