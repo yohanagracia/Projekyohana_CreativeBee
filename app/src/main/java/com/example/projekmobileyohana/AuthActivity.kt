@@ -1,24 +1,26 @@
-
 package com.example.projekmobileyohana
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.projekmobileyohana.databinding.ActivityAuthBinding
 
 class AuthActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityAuthBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_auth)
+
+        binding = ActivityAuthBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
-        val etUsername = findViewById<EditText>(R.id.etUsername)
-        val etPassword = findViewById<EditText>(R.id.etPassword)
-        val btnLogin = findViewById<Button>(R.id.btnLogin)
+        val etUsername = binding.etUsername
+        val etPassword = binding.etPassword
+        val btnLogin = binding.btnLogin
 
         btnLogin.setOnClickListener {
             val username = etUsername.text.toString().trim()

@@ -1,91 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp"
-    android:background="@color/bee_cream">
+    android:background="#FFF9E8">
 
-    <!-- Logo / ikon -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="🐝"
-        android:textSize="70sp"
-        android:layout_marginBottom="8dp" />
-
-    <!-- Judul aplikasi -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Creative Bee"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/fredoka_bold"
-        android:textColor="@color/bee_brown"
-        android:layout_marginBottom="8dp" />
-
-    <!-- Deskripsi -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Creative Clay Workshop"
-        android:textSize="16sp"
-        android:fontFamily="@font/poppins_regular"
-        android:textColor="@color/bee_brown"
-        android:layout_marginBottom="32dp" />
-
-    <!-- Tombol Katalog -->
-    <Button
-        android:id="@+id/btnCatalog"
+    <!-- Area untuk menampilkan Fragment -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Katalog Produk"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/poppins_semibold"
-        android:textColor="@color/bee_brown"
-        android:backgroundTint="@color/bee_yellow"
-        android:layout_marginBottom="12dp" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFF9E8" />
 
-    <!-- Tombol Workshop -->
-    <Button
-        android:id="@+id/btnWorkshop"
+    <!-- Garis pemisah antara konten dan navigasi -->
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Workshop Clay"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/poppins_semibold"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/bee_orange"
-        android:layout_marginBottom="12dp" />
+        android:layout_height="1dp"
+        android:background="#E6D5B8" />
 
-    <!-- Tombol Profil Developer -->
-    <Button
-        android:id="@+id/btnProfileDeveloper"
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Profil Developer"
-        android:textSize="15sp"
-        android:fontFamily="@font/poppins_semibold"
-        android:textColor="@color/bee_brown"
-        android:backgroundTint="@color/bee_yellow"
-        android:layout_marginBottom="12dp" />
-
-    <!-- Tombol Logout -->
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        android:textSize="15sp"
-        android:fontFamily="@font/poppins_semibold"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/bee_orange" />
+        android:layout_height="72dp"
+        android:background="#FFFFFF"
+        app:itemIconTint="#80552D"
+        app:itemTextColor="#80552D"
+        app:itemIconSize="24dp"
+        app:labelVisibilityMode="labeled"
+        app:itemHorizontalTranslationEnabled="false"
+        app:menu="@menu/bottom_nav_menu" />
 
 </LinearLayout>
