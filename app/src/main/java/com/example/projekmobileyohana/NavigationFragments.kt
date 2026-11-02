@@ -1,7 +1,9 @@
-
 package com.example.projekmobileyohana
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -11,7 +13,10 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 
 private fun createBeePage(
@@ -32,14 +37,10 @@ private fun createBeePage(
 
         addView(ImageView(context).apply {
             setImageResource(R.drawable.bee_logo)
-            layoutParams = LinearLayout.LayoutParams(
-                1000,
-                1000
-            )
+            layoutParams = LinearLayout.LayoutParams(1000, 1000)
             scaleType = ImageView.ScaleType.FIT_CENTER
             adjustViewBounds = true
         })
-
 
         addView(TextView(context).apply {
             text = title
@@ -76,6 +77,7 @@ private fun createBeePage(
                         .setMessage("Apakah kamu yakin ingin keluar?")
                         .setNegativeButton("Tidak", null)
                         .setPositiveButton("Ya") { _, _ ->
+
                             fragment.requireActivity()
                                 .getSharedPreferences(
                                     "user_pref",
@@ -104,16 +106,60 @@ private fun createBeePage(
     }
 }
 
+// HOME FRAGMENT DENGAN FITUR NOTIFIKASI
 class HomeFragment : Fragment() {
+
+    private val requestPermissionLauncher =
+        registerForActivityResult(
+            ActivityResultContracts.RequestPermission()
+        ) { isGranted ->
+
+            if (isGranted) {
+                NotificationHelper.showNotification(requireContext())
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "Izin notifikasi belum diberikan",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+        NotificationHelper.createNotificationChannel(requireContext())
+
         return createBeePage(
             fragment = this,
             title = "Creative Bee",
-            description = "Creative Clay Workshop\nSelamat datang di Creative Bee!"
+            description = "Creative Clay Workshop\nSelamat datang di Creative Bee!",
+            buttonText = "🔔 Aktifkan Notifikasi",
+            onButtonClick = {
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+
+                    val permission =
+                        Manifest.permission.POST_NOTIFICATIONS
+
+                    if (
+                        ContextCompat.checkSelfPermission(
+                            requireContext(),
+                            permission
+                        ) == PackageManager.PERMISSION_GRANTED
+                    ) {
+                        NotificationHelper.showNotification(requireContext())
+                    } else {
+                        requestPermissionLauncher.launch(permission)
+                    }
+
+                } else {
+                    NotificationHelper.showNotification(requireContext())
+                }
+            }
         )
     }
 }
