@@ -54,6 +54,11 @@
             android:windowSoftInputMode="adjustResize" />
 
         <activity
+            android:name=".CalendarWorkshopActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
             android:name=".WebsiteActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
