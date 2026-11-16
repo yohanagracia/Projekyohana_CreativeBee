@@ -3,6 +3,7 @@ package com.example.projekmobileyohana
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.projekmobileyohana.databinding.ActivityCatalogBinding
 
 class CatalogActivity : AppCompatActivity() {
@@ -16,16 +17,47 @@ class CatalogActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Toolbar
-        val toolbar = binding.toolbarCatalog
-        setSupportActionBar(toolbar)
-
-        // Tombol Back
+        setSupportActionBar(binding.toolbarCatalog)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        // Tombol Website
-        val btnWebsite = binding.btnWebsite
+        // Data produk
+        val products = listOf(
+            Product(
+                "Clay Honey Bear",
+                "BEST SELLER",
+                R.drawable.clay_honey_bear,
+                "⭐ 4.9 (128)",
+                "Rp35.000"
+            ),
+            Product(
+                "Clay Froggie Pot",
+                "NEW",
+                R.drawable.clay_froggie_pot,
+                "⭐ 4.8 (96)",
+                "Rp38.000"
+            ),
+            Product(
+                "White Rabbit Clay",
+                "BEST SELLER",
+                R.drawable.white_rabbit_clay,
+                "⭐ 4.7 (82)",
+                "Rp32.000"
+            ),
+            Product(
+                "Mini Croissant Clay",
+                "NEW",
+                R.drawable.mini_croissant_clay,
+                "⭐ 4.9 (110)",
+                "Rp28.000"
+            )
+        )
 
-        btnWebsite.setOnClickListener {
+        // RecyclerView dengan tampilan Grid 2 kolom
+        binding.rvCatalog.layoutManager = GridLayoutManager(this, 2)
+        binding.rvCatalog.adapter = CatalogAdapter(products)
+
+        // Tombol Website
+        binding.btnWebsite.setOnClickListener {
             val intent = Intent(this, WebsiteActivity::class.java)
             startActivity(intent)
         }

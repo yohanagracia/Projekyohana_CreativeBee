@@ -19,28 +19,22 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         lifecycleScope.launch {
-            // Menampilkan splash selama 2 detik
             delay(2000)
 
-            // Membaca status login yang tersimpan
             val sharedPref = getSharedPreferences(
                 "user_pref",
                 MODE_PRIVATE
             )
 
-            val isLogin = sharedPref.getBoolean(
-                "isLogin",
-                false
+            val isLogin = sharedPref.getBoolean("isLogin", false)
+
+            // Tampilkan onboarding kembali
+            val destination = OnboardingActivity::class.java
+
+            startActivity(
+                Intent(this@SplashScreenActivity, destination)
             )
 
-            // Menentukan halaman tujuan
-            val tujuan = if (isLogin) {
-                MainActivity::class.java
-            } else {
-                AuthActivity::class.java
-            }
-
-            startActivity(Intent(this@SplashScreenActivity, tujuan))
             finish()
         }
     }

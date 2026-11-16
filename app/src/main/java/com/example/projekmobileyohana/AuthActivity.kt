@@ -18,8 +18,8 @@ class AuthActivity : AppCompatActivity() {
 
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
-        // Tombol login
         binding.btnLogin.setOnClickListener {
+
             val username = binding.etUsername.text.toString().trim()
             val password = binding.etPassword.text.toString()
 
@@ -27,33 +27,59 @@ class AuthActivity : AppCompatActivity() {
             val savedPassword = sharedPref.getString("password", null)
             val isRegistered = sharedPref.getBoolean("isRegistered", false)
 
-            val validPracticumLogin =
-                username.isNotEmpty() &&
-                        password.isNotEmpty() &&
-                        username == password
+            // Login Admin
+            val validAdmin =
+                username == "adminbee" &&
+                        password == "beeadmin123"
 
+            // Login Customer yang sudah terdaftar
             val validRegisteredLogin =
                 isRegistered &&
                         username == savedUsername &&
                         password == savedPassword
 
-            if (validPracticumLogin || validRegisteredLogin) {
-                sharedPref.edit()
-                    .putBoolean("isLogin", true)
-                    .apply()
+            // Login praktikum yang sudah ada
+            val validPracticumLogin =
+                username.isNotEmpty() &&
+                        password.isNotEmpty() &&
+                        username == password
 
-                startActivity(Intent(this, MainActivity::class.java))
-                finish()
-            } else {
-                AlertDialog.Builder(this)
-                    .setTitle("Login Gagal")
-                    .setMessage("Username atau password salah. Silakan coba lagi.")
-                    .setPositiveButton("OK", null)
-                    .show()
+            when {
+
+                validAdmin -> {
+                    sharedPref.edit()
+                        .putBoolean("isLogin", true)
+                        .putString("userRole", "admin")
+                        .apply()
+
+                    startActivity(
+                        Intent(this, CalendarWorkshopActivity::class.java)
+                    )
+                    finish()
+                }
+
+                validRegisteredLogin || validPracticumLogin -> {
+                    sharedPref.edit()
+                        .putBoolean("isLogin", true)
+                        .putString("userRole", "customer")
+                        .apply()
+
+                    startActivity(
+                        Intent(this, MainActivity::class.java)
+                    )
+                    finish()
+                }
+
+                else -> {
+                    AlertDialog.Builder(this)
+                        .setTitle("Login Gagal")
+                        .setMessage("Username atau password salah. Silakan coba lagi.")
+                        .setPositiveButton("OK", null)
+                        .show()
+                }
             }
         }
 
-        // Tombol daftar akun baru
         binding.btnRegisterPage.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
