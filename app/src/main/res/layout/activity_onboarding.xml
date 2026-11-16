@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="@drawable/bg_home">
+
+    <TextView
+        android:id="@+id/btnSkip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lewati"
+        android:textColor="@color/bee_brown"
+        android:textSize="14sp"
+        android:gravity="end"
+        android:padding="8dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <ImageView
+        android:id="@+id/imgOnboarding"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:src="@drawable/bee_logo"
+        android:scaleType="fitCenter"
+        android:contentDescription="Logo Creative Bee" />
+
+    <TextView
+        android:id="@+id/tvOnboardingTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Creative Bee"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        android:textColor="@color/bee_brown"
+        android:gravity="center"
+        android:layout_marginTop="28dp" />
+
+    <TextView
+        android:id="@+id/tvOnboardingDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Temukan dunia kreativitas melalui kerajinan clay handmade."
+        android:textSize="16sp"
+        android:textColor="@color/bee_brown"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:id="@+id/tvIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="● ○ ○"
+        android:textSize="22sp"
+        android:textColor="@color/bee_orange"
+        android:gravity="center"
+        android:layout_marginTop="35dp" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lanjut"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:backgroundTint="@color/bee_orange"
+        android:layout_marginTop="25dp" />
+
+</LinearLayout>

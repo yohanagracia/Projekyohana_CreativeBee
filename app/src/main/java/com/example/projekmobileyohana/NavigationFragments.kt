@@ -109,58 +109,47 @@ private fun createBeePage(
 // HOME FRAGMENT DENGAN FITUR NOTIFIKASI
 class HomeFragment : Fragment() {
 
-    private val requestPermissionLauncher =
-        registerForActivityResult(
-            ActivityResultContracts.RequestPermission()
-        ) { isGranted ->
-
-            if (isGranted) {
-                NotificationHelper.showNotification(requireContext())
-            } else {
-                Toast.makeText(
-                    requireContext(),
-                    "Izin notifikasi belum diberikan",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
 
-        NotificationHelper.createNotificationChannel(requireContext())
+        val context = requireContext()
 
-        return createBeePage(
-            fragment = this,
-            title = "Creative Bee",
-            description = "Creative Clay Workshop\nSelamat datang di Creative Bee!",
-            buttonText = "🔔 Aktifkan Notifikasi",
-            onButtonClick = {
+        val layout = LinearLayout(context).apply {
+            orientation = LinearLayout.VERTICAL
+            gravity = Gravity.CENTER
+            setPadding(24, 24, 24, 24)
+            setBackgroundColor(0xFFFFF9E8.toInt())
+        }
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        val logo = ImageView(context).apply {
+            setImageResource(R.drawable.bee_logo)
+            layoutParams = LinearLayout.LayoutParams(300, 300)
+            scaleType = ImageView.ScaleType.FIT_CENTER
+        }
 
-                    val permission =
-                        Manifest.permission.POST_NOTIFICATIONS
+        val title = TextView(context).apply {
+            text = "Creative Bee"
+            textSize = 28f
+            setTextColor(0xFF80552D.toInt())
+            gravity = Gravity.CENTER
+            setTypeface(null, android.graphics.Typeface.BOLD)
+        }
 
-                    if (
-                        ContextCompat.checkSelfPermission(
-                            requireContext(),
-                            permission
-                        ) == PackageManager.PERMISSION_GRANTED
-                    ) {
-                        NotificationHelper.showNotification(requireContext())
-                    } else {
-                        requestPermissionLauncher.launch(permission)
-                    }
+        val description = TextView(context).apply {
+            text = "Creative Clay Workshop\nSelamat datang di Creative Bee!"
+            textSize = 16f
+            setTextColor(0xFF80552D.toInt())
+            gravity = Gravity.CENTER
+        }
 
-                } else {
-                    NotificationHelper.showNotification(requireContext())
-                }
-            }
-        )
+        layout.addView(logo)
+        layout.addView(title)
+        layout.addView(description)
+
+        return layout
     }
 }
 

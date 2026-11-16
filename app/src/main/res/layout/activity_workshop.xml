@@ -170,7 +170,7 @@
                 android:id="@+id/btnBookWorkshop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Pesan Workshop"
+                android:text="Website Creative Bee"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/bee_brown"
@@ -178,18 +178,6 @@
                 android:padding="12dp"
                 android:layout_marginBottom="12dp" />
 
-            <!-- Tombol Website -->
-            <Button
-                android:id="@+id/btnWorkshopWebsite"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lihat Website Creative Bee"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:backgroundTint="@color/bee_orange"
-                android:padding="12dp"
-                android:layout_marginBottom="12dp" />
 
             <!-- Tombol Kalender Workshop -->
             <Button
@@ -203,6 +191,19 @@
                 android:backgroundTint="@color/bee_yellow"
                 android:padding="12dp"
                 android:layout_marginBottom="20dp" />
+
+            <!-- Tombol Website -->
+            <Button
+                android:id="@+id/btnWorkshopWebsite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pesan Workshop"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/bee_orange"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp" />
 
         </LinearLayout>
 
