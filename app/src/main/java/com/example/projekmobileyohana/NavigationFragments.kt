@@ -1,9 +1,7 @@
+
 package com.example.projekmobileyohana
 
-import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -13,10 +11,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 
 private fun createBeePage(
@@ -37,10 +32,14 @@ private fun createBeePage(
 
         addView(ImageView(context).apply {
             setImageResource(R.drawable.bee_logo)
-            layoutParams = LinearLayout.LayoutParams(1000, 1000)
+            layoutParams = LinearLayout.LayoutParams(
+                1000,
+                1000
+            )
             scaleType = ImageView.ScaleType.FIT_CENTER
             adjustViewBounds = true
         })
+
 
         addView(TextView(context).apply {
             text = title
@@ -77,7 +76,6 @@ private fun createBeePage(
                         .setMessage("Apakah kamu yakin ingin keluar?")
                         .setNegativeButton("Tidak", null)
                         .setPositiveButton("Ya") { _, _ ->
-
                             fragment.requireActivity()
                                 .getSharedPreferences(
                                     "user_pref",
@@ -106,50 +104,17 @@ private fun createBeePage(
     }
 }
 
-// HOME FRAGMENT DENGAN FITUR NOTIFIKASI
 class HomeFragment : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-        val context = requireContext()
-
-        val layout = LinearLayout(context).apply {
-            orientation = LinearLayout.VERTICAL
-            gravity = Gravity.CENTER
-            setPadding(24, 24, 24, 24)
-            setBackgroundColor(0xFFFFF9E8.toInt())
-        }
-
-        val logo = ImageView(context).apply {
-            setImageResource(R.drawable.bee_logo)
-            layoutParams = LinearLayout.LayoutParams(300, 300)
-            scaleType = ImageView.ScaleType.FIT_CENTER
-        }
-
-        val title = TextView(context).apply {
-            text = "Creative Bee"
-            textSize = 28f
-            setTextColor(0xFF80552D.toInt())
-            gravity = Gravity.CENTER
-            setTypeface(null, android.graphics.Typeface.BOLD)
-        }
-
-        val description = TextView(context).apply {
-            text = "Creative Clay Workshop\nSelamat datang di Creative Bee!"
-            textSize = 16f
-            setTextColor(0xFF80552D.toInt())
-            gravity = Gravity.CENTER
-        }
-
-        layout.addView(logo)
-        layout.addView(title)
-        layout.addView(description)
-
-        return layout
+        return createBeePage(
+            fragment = this,
+            title = "Creative Bee",
+            description = "Creative Clay Workshop\nSelamat datang di Creative Bee!"
+        )
     }
 }
 
